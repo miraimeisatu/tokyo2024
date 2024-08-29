@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Heat Stroke Risk（over65）</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
+    
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/d3-queue.v3.min.js"></script>
+    <script src="https://d3js.org/d3-request.v1.min.js"></script>
+
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+    
+    <style>
+      body { margin:0; padding:0; }
+      #map { position:absolute; top:0; bottom:0; width:100%; }
+
+      .legend {
+        background-color: #fff;
+        border-radius: 3px;
+        bottom: 30px;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.10);
+        font: 15px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        padding: 10px;
+        position: absolute;
+        right: 10px;
+        z-index: 1;
+        line-height: 25px;
+        height: 280px;
+      }
+      .legend h4 {
+        margin: 0 0 10px;
+      }
+      .legend div span {
+        border-radius: 50%;
+        display: inline-block;
+        height: 15px;
+        margin-right: 10px;
+        width: 15px;
+        color:orangered
+      }
+    </style>
+</head>
+
+<body>
+  <div id="tooltip"></div>
+  <div id='map'></div>
+  <div id='county-legend' class='legend'>
+    <h4>Heat Stroke Risk（over65）</h4>
+      <div><span style='background-color: rgb(215, 25, 28)'></span>95% over </div>
+      <div><span style='background-color: rgb(232, 91, 58)'></span>85% - 94% </div>
+      <div><span style='background-color: rgb(249, 158, 89)'></span>75% - 84% </div>
+      <div><span style='background-color: rgb(254, 201, 128)'></span>65% - 74% </div>
+      <div><span style='background-color: rgb(255, 237, 170)'></span>55% - 64% </div>
+      <div><span style='background-color: rgb(237, 247, 201)'></span>45% - 54% </div>
+      <div><span style='background-color: rgb(199, 230, 219)'></span>35% - 44% </div>
+      <div><span style='background-color: rgb(157, 207, 228)'></span>25% - 34% </div>
+      <div><span style='background-color: rgb(100, 165, 205)'></span>15% - 24% </div>
+      <div><span style='background-color: rgb(44, 123, 182)'></span>under 14% </div>
+　</div>        
+
+</body>
+
+<script type="text/javascript" src=./o65pop_2d-0128_mesh.js></script> 
+
+</html>
+
